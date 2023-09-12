@@ -1,7 +1,7 @@
 
 from django.contrib import admin
-from django.urls import path
-from .import views
+from django.urls import path, include
+from .import views, user_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,4 +14,8 @@ urlpatterns = [
     path('contact',views.CONTACT,name='contact'),
 
     path('about',views.ABOUT, name='about'),
+
+    path('accounts/register', user_login.REGISTER, name='register'),
+    path('accounts/', include('django.contrib.auth.urls')),
+
 ]
