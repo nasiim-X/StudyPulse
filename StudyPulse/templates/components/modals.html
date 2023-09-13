@@ -101,14 +101,15 @@
   
                       <div class="modal-body">
                           <!-- Form Signin -->
-                          <form class="mb-5">
+                          <form class="mb-5" method="post" action="{% url 'doLogin' %}">
+                            {% csrf_token %}
   
                               <!-- Email -->
                               <div class="form-group mb-5">
                                   <label for="modalSigninEmail">
-                                      Username or Email
+                                      Email
                                   </label>
-                                  <input type="email" class="form-control" id="modalSigninEmail" placeholder="StudyPulse">
+                                  <input type="email" class="form-control" id="modalSigninEmail" placeholder="StudyPulse" name="email">
                               </div>
   
                               <!-- Password -->
@@ -116,7 +117,7 @@
                                   <label for="modalSigninPassword">
                                       Password
                                   </label>
-                                  <input type="password" class="form-control" id="modalSigninPassword" placeholder="**********">
+                                  <input type="password" class="form-control" id="modalSigninPassword" placeholder="**********" name="password">
                               </div>
   
                               <div class="d-flex align-items-center mb-5 font-size-sm">
