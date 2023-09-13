@@ -17,5 +17,6 @@ urlpatterns = [
 
     path('accounts/register', user_login.REGISTER, name='register'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('doLogin', user_login.DO_LOGIN, name='doLogin'),
 
 ]
