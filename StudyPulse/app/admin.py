@@ -4,3 +4,5 @@ from .models import *
 
 
 admin.site.register(Categories)
+admin.site.register(Author)
+admin.site.register(Course)
