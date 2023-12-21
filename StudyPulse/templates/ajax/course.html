@@ -1,10 +1,16 @@
+{% load static %}
 {% load course_tags %}
+{% if course|length < 1 %}
+
+<img src="{% static 'assets/img/not-found.gif' %}" style="margin-left: 20%;">
+{% else %}
+
 {% for i in course %}
-                    <div class="col-md pb-4 pb-md-7">
-                        <!-- Card -->
-                        <div class="card border shadow p-2 lift sk-fade">
-                            <!-- Image -->
-                            <div class="card-zoom position-relative">
+     <div class="col-md pb-4 pb-md-7">
+         <!-- Card -->
+        <div class="card border shadow p-2 lift sk-fade">
+            <!-- Image -->
+            <div class="card-zoom position-relative">
                                 <div class="badge-float sk-fade-top top-0 right-0 mt-4 me-4">
                                     <a href="course-single-v5.html" class="btn btn-xs btn-dark text-white rounded-circle lift opacity-dot-7 me-1 p-2 d-inline-flex justify-content-center align-items-center w-36 h-36">
                                         <!-- Icon -->
@@ -30,10 +36,10 @@
                                 <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4 fw-bold">
                                     <span class="text-white text-uppercase fw-bold font-size-xs">Discount {{i.discount}} %</span>
                                 </span>
-                            </div>
+            </div>
 
-                            <!-- Footer -->
-                            <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
+            <!-- Footer -->
+            <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
                                 <a href="instructors-single.html" class="d-block">
                                     <div class="avatar sk-fade-right avatar-xl badge-float position-absolute top-0 right-0 mt-n6 me-5 rounded-circle shadow border border-white border-w-lg">
                                         <img src="{{i.author.author_profile}}" alt="..." class="avatar-img rounded-circle">
@@ -100,7 +106,9 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endif %}
