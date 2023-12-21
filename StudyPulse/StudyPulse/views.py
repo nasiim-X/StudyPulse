@@ -65,3 +65,12 @@ def CONTACT(request):
 def ABOUT(request):
     return render(request,'Main/about_us.html')
 
+def SEARCH_COURSE(request):
+    query = request.GET['query']
+    course = Course.objects.filter(title__icontains = query)
+
+    context = {
+        'course':course,
+    }
+    return render(request,'search/search.html',context)
+

@@ -1,9 +1,10 @@
 {% load static %}
 {% load course_tags %}
-{% if course|length < 1 %}
+
+<!-- {% if course|length < 1 %}
 
 <img src="{% static 'assets/img/not-found.gif' %}" style="margin-left: 20%;">
-{% else %}
+{% else %} -->
 
 {% for i in course %}
      <div class="col-md pb-4 pb-md-7">
@@ -110,5 +111,3 @@
         </div>
     </div>
 {% endfor %}
-
-{% endif %}
