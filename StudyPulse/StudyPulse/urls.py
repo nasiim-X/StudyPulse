@@ -13,7 +13,7 @@ urlpatterns = [
 
     path('', views.HOME, name='home'),
     path('courses', views.SINGLE_COURSE, name='single_course'),
-
+    path('product/filter-data',views.filter_data,name="filter-data"),
     path('contact',views.CONTACT,name='contact'),
 
     path('about',views.ABOUT, name='about'),
@@ -23,5 +23,6 @@ urlpatterns = [
     path('doLogin', user_login.DO_LOGIN, name='doLogin'),
     path('accounts/profile', user_login.PROFILE, name='profile'),
     path('accounts/profile/update', user_login.PROFILE_UPDATE, name='profile_update'),
+
 
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT) 
