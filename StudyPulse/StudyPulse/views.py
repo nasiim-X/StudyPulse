@@ -139,3 +139,11 @@ def CHECKOUT(request,slug):
         return redirect('home')
     
     return render(request,'checkout/checkout.html')
+
+def MY_COURSE(request):
+    course = UserCource.objects.filter(user = request.user)
+
+    context = {
+        'course':course,
+    }
+    return render(request,'course/my_course.html',context)
