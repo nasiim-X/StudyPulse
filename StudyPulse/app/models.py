@@ -32,6 +32,11 @@ class Level(models.Model):
         return self.name
     
 
+class Language(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class Course(models.Model):
     STATUS = (
@@ -49,8 +54,11 @@ class Course(models.Model):
     description = models.TextField()
     price = models.IntegerField(null=True,default=0)
     discount = models.IntegerField(null=True)
+    language = models.ForeignKey(Language,on_delete=models.CASCADE,null=True)
+    Deadline = models.CharField(max_length=100,null=True)
     slug = models.SlugField(default='', max_length=500, null=True, blank=True)
     status = models.CharField(choices=STATUS,max_length=100,null=True)
+    Certificate = models.CharField(null=True,max_length=100)
 
 
     def __str__(self):
@@ -109,7 +117,7 @@ class Video (models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE) 
     title = models.CharField(max_length=100)
     youtube_id = models.CharField(max_length=200) 
-    time_duration = models.FloatField (null=True) 
+    time_duration = models.IntegerField (null=True) 
     preview = models.BooleanField (default=False)
     
     def __str__(self):

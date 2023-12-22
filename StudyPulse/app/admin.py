@@ -11,6 +11,9 @@ class Requirements_TabularInline(admin.TabularInline):
 class Video_TabularInline(admin.TabularInline):
     model = Video
 
+class Language_TabularInline(admin.TabularInline):
+    model = Language
+
 class course_admin(admin.ModelAdmin):
     inlines = (what_you_learn_TabularInline,Requirements_TabularInline,Video_TabularInline)
 
@@ -22,3 +25,4 @@ admin.site.register(What_you_learn)
 admin.site.register(Requirements)
 admin.site.register(Lesson)
 admin.site.register(Video)
+admin.site.register(Language)
