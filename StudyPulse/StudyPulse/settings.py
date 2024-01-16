@@ -130,5 +130,8 @@ LOGOUT_REDIRECT_URL = 'login'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'nasiim.nsmlp@gmail.com'
-EMAIL_HOST_PASSWORD = 'dfkfkjfdkfdk45463jfnasiim'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+
+KEY_ID = ''
+KEY_SECRET = ''
